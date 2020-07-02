@@ -52,13 +52,13 @@ var config = {
     logLevel: "info"
 };
 gulp.task('html:build', function () {
-    gulp.src(path.src.html)
+    return gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
 gulp.task('js:build', function () {
-   gulp.src(path.src.js)
+    return gulp.src(path.src.js)
        .pipe(rigger())
        .pipe(sourcemaps.init())
        .pipe(uglify())
@@ -68,7 +68,7 @@ gulp.task('js:build', function () {
        .pipe(reload({stream: true}));
 });
 gulp.task('style:build', function () {
-   gulp.src(path.src.style)
+    return gulp.src(path.src.style)
        .pipe(sourcemaps.init())
        .pipe(sass())
        .pipe(cleanCSS())
@@ -78,18 +78,12 @@ gulp.task('style:build', function () {
        .pipe(reload({stream: true}));
 });
 gulp.task('image:build', function () {
-   gulp.src(path.src.img)
-       .pipe(imagemin({
-           progressive: true,
-           svgoPlugins: [{removeViewBox: false}],
-           use: [pngquant()],
-           interlaced: true
-       }))
+    return gulp.src(path.src.img)
        .pipe(gulp.dest(path.build.img))
        .pipe(reload({stream: true}));
 });
 gulp.task('fonts:build', function() {
-   gulp.src(path.src.fonts)
+    return gulp.src(path.src.fonts)
        .pipe(gulp.dest(path.build.fonts))
 });
       

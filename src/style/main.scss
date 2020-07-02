@@ -693,6 +693,7 @@ header{
         }
         .tdRel{
             position: relative;
+            display: flex;
         }
         .tdRel::before{
             content: '';
