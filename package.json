@@ -6,7 +6,7 @@
   "dependencies": {
     "del": "^3.0.0",
     "imagemin-pngquant": "^9.0.0",
-    "swiper": "^5.4.5"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
